@@ -1,0 +1,37 @@
+<article class="film_review">
+  <header>
+    <h1><%= @article.title %></h1>
+    <span class="label label-info">Author: <%= @article.user.name %></span>
+    <span class="label label-info pull-right">Date: <%= @article.created_at.strftime('%d-%m-%y %H:%M')%></span>
+  </header>
+  
+    <p class="lead"><%=@article.content%></p>
+  
+</article>
+
+  <div id="comments">
+    <% @article.sub_articles.each do |sub|%>
+      <article>
+        <span class="label label-default">User: <%= sub.user.name %> Date: <%= sub.created_at.strftime('%d-%m-%y %H:%M')%></span>
+        <p><%= sub.content %></p>
+      </article>
+    <%end%>
+    <div class="inner-comments"></div>
+  </div>
+
+<% if user_signed_in? %>
+
+  <%= form_for [@article, SubArticle.new], remote: true do |f| %>
+    <%= f.label(:content, "Comments:") %></br>
+    <%= f.text_area :content, :cols => "80%", :rows => "5" %></br>
+    <%= f.submit("Add comment") %>
+  <% end %>
+<%end%>
+
+<div class="push">
+  <%= link_to 'Back', articles_path %>  
+</div>
+
+
+
+

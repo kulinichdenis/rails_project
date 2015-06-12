@@ -1,0 +1,31 @@
+
+document.querySelector('textarea[name*=sub_article]').value = "";
+// debugger;
+
+var elemComments = document.querySelector('#comments');
+
+var elemArticle = document.createElement('article');
+var contentComment = document.createElement('p');
+contentComment.textContent = "<%= @sub_article.content%>";
+
+// elemArticle.textContent = "dsfdsfs";
+var headerComment = document.createElement('span');
+headerComment.className += 'label label-default';
+headerComment.textContent = "date: <%= @sub_article.created_at.strftime('%H:%M %d-%m-%y')%> user: <%= @sub_article.user.name%>"; 
+elemArticle.appendChild(headerComment);
+// contentComment.textContent("Text");
+// var content = document.createTextNode(" Date: <%= @sub_article.created_at %>  User:<%= @sub_article.user.name%> ");
+// elemArticle.textContent("dsfdsfs");
+elemArticle.appendChild(contentComment);
+elemComments.appendChild(elemArticle);
+
+
+
+// <article>
+//         <h1>Apple</h1>
+//         <p>The <b>apple</b> is the pomaceous fruit of the apple tree...</p>
+//         ...
+// </article>
+
+// var txt = document.createTextNode('Test');
+// element.appendChild(txt);
