@@ -1,7 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dku/Documents/rails_project/Rails_Anadea/app/controllers/articles_controller.rb": [
+      "/Users/eum/Projects/rails_project/Rails_Anadea/app/models/article.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/eum/Projects/rails_project/Rails_Anadea/app/models/category.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/eum/Projects/rails_project/Rails_Anadea/app/models/sub_article.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/eum/Projects/rails_project/Rails_Anadea/app/controllers/articles_controller.rb": [
         1,
         1,
         null,
@@ -80,7 +101,7 @@
         null,
         null
       ],
-      "/Users/dku/Documents/rails_project/Rails_Anadea/app/controllers/application_controller.rb": [
+      "/Users/eum/Projects/rails_project/Rails_Anadea/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -117,17 +138,9 @@
         0,
         null,
         null,
-        null
-      ],
-      "/Users/dku/Documents/rails_project/Rails_Anadea/app/models/article.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
         null
       ]
     },
-    "timestamp": 1434366619
+    "timestamp": 1434369219
   }
 }

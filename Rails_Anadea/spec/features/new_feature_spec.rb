@@ -1,14 +1,10 @@
 require "rails_helper"
 
-describe "the signin process", :type => :feature do
-  before :each do
-    visit root_path
-  end
-
+describe "the signin process", type: :feature, js: true do
   it "signs me in" do
-    # save_and_open_page
+    visit root_path
     screenshot_and_open_image
-    
+
 
 
     # visit '/sessions/new'
