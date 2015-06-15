@@ -4,7 +4,7 @@ describe "the signin process", type: :feature, js: true do
   it "signs me in" do
     visit root_path
     screenshot_and_open_image
-
+    save_and_open_page
 
 
     # visit '/sessions/new'

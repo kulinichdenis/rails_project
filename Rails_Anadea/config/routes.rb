@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :sub_articles
   end
+  
   devise_for :users
 
   get 'index' => 'users#index' 
