@@ -9,10 +9,14 @@ var contentComment = document.createElement('p');
 contentComment.textContent = "<%= @sub_article.content%>";
 
 // elemArticle.textContent = "dsfdsfs";
-var headerComment = document.createElement('span');
-headerComment.className += 'label label-default';
-headerComment.textContent = "User: <%= @sub_article.user.name%> Date: <%= @sub_article.created_at.strftime('%d-%m-%y %H:%M')%>"; 
-elemArticle.appendChild(headerComment);
+var headerCommentUser = document.createElement('span');
+var headerCommentDate = document.createElement('span');
+headerCommentUser.className += 'label label-default';
+headerCommentUser.textContent = "User: <%= @sub_article.user.name%>";
+headerCommentDate.className += 'label label-default pull-right';
+headerCommentDate.textContent = "Date: <%= @sub_article.created_at.strftime('%d-%m-%y %H:%M')%>"; 
+elemArticle.appendChild(headerCommentUser);
+elemArticle.appendChild(headerCommentDate);
 // contentComment.textContent("Text");
 // var content = document.createTextNode(" Date: <%= @sub_article.created_at %>  User:<%= @sub_article.user.name%> ");
 // elemArticle.textContent("dsfdsfs");

@@ -1,0 +1,21 @@
+.share-story {
+  &__title {
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  &__social-links {
+    padding: 0;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    width: 90%;
+    display: table;
+    list-style-type: none;
+  }
+
+  &__social-link {
+    display: table-cell;
+    text-align: center;
+  }
+}

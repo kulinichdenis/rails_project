@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-articles_controller_rb.html">app/controllers/articles_controller.rb</a></td>
-            <td class='right_align'><tt>77</tt></td>
+            <td class='right_align'><tt>76</tt></td>
             <td class='right_align'><tt>33</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>74.03%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.89%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:74px"></div>
-        <div class="uncovered" style="width:26px"></div>
+        <div class="covered" style="width:83px"></div>
+        <div class="uncovered" style="width:17px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>39.39%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>60.61%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:39px"></div>
-        <div class="uncovered" style="width:61px"></div>
+        <div class="covered" style="width:61px"></div>
+        <div class="uncovered" style="width:39px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -98,7 +98,7 @@
         <tr class="marked">
           <td><pre><a name="line17">17</a>   def new</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line18">18</a>     @article = Article.new</pre></td>
         </tr>
         <tr class="inferred">
@@ -128,163 +128,160 @@
         <tr class="marked">
           <td><pre><a name="line27">27</a>   def create</pre></td>
         </tr>
-        <tr class="uncovered">
+        <tr class="marked">
           <td><pre><a name="line28">28</a>     @article = current_user.articles.new(article_params)</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line29">29</a> </pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line30">30</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line31">31</a>       if @article.save</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line32">32</a>         format.html { redirect_to @article, notice: &#39;Article was successfully created.&#39; }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line33">33</a>         # format.json { render :show, status: :created, location: @article }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line34">34</a>       else</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line35">35</a>         format.html {</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line36">36</a>           flash[:alert] = @article.errors.full_messages.join(&#39;, &#39;)</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line37">37</a>           render :new</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line38">38</a>         }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line39">39</a>         # format.json { render json: @article.errors, status: :unprocessable_entity }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line40">40</a>       end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line41">41</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line42">42</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line43">43</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line44">44</a>   # PATCH/PUT /articles/1</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line45">45</a>   # PATCH/PUT /articles/1.json</pre></td>
+        <tr class="marked">
+          <td><pre><a name="line29">29</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line46">46</a>   def update</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line47">47</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line48">48</a>       if @article.update(article_params)</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line49">49</a>         format.html { redirect_to @article, notice: &#39;Article was successfully updated.&#39; }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line50">50</a>         format.json { render :show, status: :ok, location: @article }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line51">51</a>       else</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line52">52</a>         format.html { render :edit }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line53">53</a>         format.json { render json: @article.errors, status: :unprocessable_entity }</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line54">54</a>       end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line55">55</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line56">56</a>   end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line57">57</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line58">58</a>   # DELETE /articles/1</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line59">59</a>   # DELETE /articles/1.json</pre></td>
+          <td><pre><a name="line30">30</a>       if @article.save</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line60">60</a>   def destroy</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line61">61</a>     @article.destroy</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line62">62</a>     respond_to do |format|</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line63">63</a>       format.html { redirect_to articles_url, notice: &#39;Article was successfully destroyed.&#39; }</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line64">64</a>       format.json { head :no_content }</pre></td>
+          <td><pre><a name="line31">31</a>         format.html { redirect_to @article, notice: &#39;Article was successfully created.&#39; }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line65">65</a>     end</pre></td>
+          <td><pre><a name="line32">32</a>         # format.json { render :show, status: :created, location: @article }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line66">66</a>   end</pre></td>
+          <td><pre><a name="line33">33</a>       else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line34">34</a>         format.html {</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line35">35</a>           flash[:alert] = @article.errors.full_messages.join(&#39;, &#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line36">36</a>           render :new</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line67">67</a> </pre></td>
+          <td><pre><a name="line37">37</a>         }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line38">38</a>         # format.json { render json: @article.errors, status: :unprocessable_entity }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line39">39</a>       end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line40">40</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line41">41</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line42">42</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line43">43</a>   # PATCH/PUT /articles/1</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line44">44</a>   # PATCH/PUT /articles/1.json</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line68">68</a>   private</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line69">69</a>     # Use callbacks to share common setup or constraints between actions.</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line70">70</a>     def set_article</pre></td>
+          <td><pre><a name="line45">45</a>   def update</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line71">71</a>       @article = Article.find(params[:id])</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line72">72</a>     end</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line73">73</a> </pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line74">74</a>     # Never trust parameters from the scary internet, only allow the white list through.</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line75">75</a>     def article_params</pre></td>
+          <td><pre><a name="line46">46</a>     respond_to do |format|</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line76">76</a>       params.require(:article).permit(:title, :content, :user_id, category_ids:[])</pre></td>
+          <td><pre><a name="line47">47</a>       if @article.update(article_params)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line48">48</a>         format.html { redirect_to @article, notice: &#39;Article was successfully updated.&#39; }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line49">49</a>         format.json { render :show, status: :ok, location: @article }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line77">77</a>     end</pre></td>
+          <td><pre><a name="line50">50</a>       else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line51">51</a>         format.html { render :edit }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line52">52</a>         format.json { render json: @article.errors, status: :unprocessable_entity }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line78">78</a> end</pre></td>
+          <td><pre><a name="line53">53</a>       end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line54">54</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line55">55</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line56">56</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line57">57</a>   # DELETE /articles/1</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line58">58</a>   # DELETE /articles/1.json</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line59">59</a>   def destroy</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line60">60</a>     @article.destroy</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line61">61</a>     respond_to do |format|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line62">62</a>       format.html { redirect_to articles_url, notice: &#39;Article was successfully destroyed.&#39; }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line63">63</a>       format.json { head :no_content }</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line64">64</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line65">65</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line66">66</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line67">67</a>   private</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line68">68</a>     # Use callbacks to share common setup or constraints between actions.</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line69">69</a>     def set_article</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line70">70</a>       @article = Article.find(params[:id])</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line71">71</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line72">72</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line73">73</a>     # Never trust parameters from the scary internet, only allow the white list through.</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line74">74</a>     def article_params</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line75">75</a>       params.require(:article).permit(:title, :content, :user_id, category_ids:[])</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line76">76</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line77">77</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2015-06-15 15:10:20 +0300 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2015-06-17 09:57:38 +0300 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

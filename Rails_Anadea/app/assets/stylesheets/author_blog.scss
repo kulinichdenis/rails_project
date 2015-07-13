@@ -1,0 +1,20 @@
+.author-blog {
+  margin-top: 34px;
+  position: relative;
+
+  &__photo {
+    position: absolute;
+    top: 150px;
+    left: 35%;
+    border-radius: 50%;
+    width: 100px;
+    border: 5px solid #fff;
+  }
+
+  &__content {
+    padding-top: 60px;
+    text-align: center;
+    background-color: #fff;
+    height: 120px;
+  }
+}

@@ -1,92 +1,82 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  text-align: center;
-}
+.page-content {
+  margin: 0 auto;
+  width: 80%;
 
-.articles {
-  -webkit-columns: 3;
-  -moz-columns: 3;
-  columns: 3;
-  -webkit-column-gap: 2em;
-  -moz-column-gap: 2em;
-  column-gap: 2em; 
-}
-
-.articles li{
-  background: white;
-  padding: 1em;
-  margin-bottom: 1.3em;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-
-}
-
-.jumboton {
-  text-align: center;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 50px;
-  border-bottom: 1px solid #e5e5e5;
-
-}
-
-h3 a:hover {
-  text-decoration: none;
-}
-
-h3 {
-  border-bottom: 1px solid #D3D3D3;
-}
-
-#comments article {
-  padding-left: 20px;
-}
-
-.new_sub_article, .new_article  {
-  padding: 20px 20px 5px 20px;
-  border-top: 1px solid #e5e5e5;
-
-}
-
-.film_review {
-  border-bottom: 1px solid #e5e5e5; 
-}
-
-article {
-  padding-top:10px; 
-  border-bottom: 1px dotted #cecece;
-}
-
-article p {
-  padding-left: 10px;
-}
-
-select{
-  width:80%;
-}
-
-.field{
-
-  margin-bottom: 10px;
-
-  input[type="text"], textarea, select   {
-    width: 100%;
-  }
-  
-  textarea {
-    height:320px;
+  &:before,
+  &:after {
+    content:"";
+    display:table;
   }
 
-}
+  &:after {
+    clear:both;
+  }
+
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+
+  .left-bar {
+    float:left;
+    width: 68%;
+  }
 
 .push {
   margin-bottom: 40px;
   text-align: right;
-
 }
+
+    .pagination {
+      background-color: #fff;
+      margin-top: 20px;
+      .current,
+      a {
+        padding: 15px;
+        margin-right: 5px;
+        display: inline-block;
+      }
+
+      a {
+        text-decoration: none;
+        border: 1px solid red;
+        color:red;
+      }
+    }
+  }
+
+  .right-bar {
+    width: 30%;
+    float: right;
+    overflow: hidden;
+
+    }
+
+  .slider {
+
+  }
+
+  .instagram-block {
+
+  }
+
+  .categories {
+
+  }
+
+  .textwidget {
+
+  }
+
+  .flick-photos {
+
+  }
+
+  .social {
+
+  }
+
+  .bluth-tabs{
+
+  }
+
 
 

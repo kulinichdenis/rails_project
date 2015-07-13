@@ -6,8 +6,9 @@ describe Article do
     expect(article).to be_valid
   end
 
-  it "is invalid title" do
-    user = User.create 
+  it "is invalid title" do 
+    user = User.create(name: 'test', email: 'test@test.com', password:'123456789')
+    
     article = Article.create(title: "", content: "sadsadas", user_id: user)
     article.valid?
     expect(article.errors[:title]).to include("can't be blank")
@@ -22,12 +23,12 @@ describe Article do
   end
 
   it "is invalid user" do 
-    article = Article.create(:title => "asdasd", :content => "dfdsfdsfdsf", :user_id => nil)
+    article = Article.create(title: "asdasd", content:"dfdsfdsfdsf", user_id: nil)
     article.valid?
     expect(article.errors[:user_id]).to include("can't be blank") 
     # expect(article[:title]).to include("can't be blank") 
   end
-  
+
   it "association belong_to" do 
     should belong_to(:user) 
   end

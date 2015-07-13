@@ -1,0 +1,92 @@
+.left-bar
+  %h1 List Articles
+  .articles
+    - @articles.each do |article|
+      .article
+        %h1= link_to article.title, article_path(article), class: 'article__title'
+        %span= article.created_at.strftime('%B %e, %Y')
+        %span psdasd
+        %br
+        = article.content[/(\S+(\s+)?){,#{100}}/].strip
+        .article__button.article__button_active
+          = link_to 'Continue reading...'
+        .share-story
+          %h4.share-story__title Share story
+          %ul.share-story__social-links
+            %li.share-story__social-link
+              = link_to '#facebook', target: '_blank' do
+                %i.icon-facebook
+            %li{'data-tooltip-position': 'top', 'data-tooltip': "Google+", class: 'share-story__social-link'}
+              = link_to '#gplus', target: '_blank' do
+                %i.icon-gplus
+            %li{'data-tooltip-position': 'top', 'data-tooltip': "Twitter", class: 'share-story__social-link'}
+              = link_to '#twitter', target: '_blank' do
+                %i.icon-twitter
+            %li{'data-tooltip-position': 'top', 'data-tooltip': "Pinterest", class: 'share-story__social-link'}
+              = link_to '#pinterest', target: '_blank' do
+                %i.icon-pinterest
+            %li{'data-tooltip-position': 'top', 'data-tooltip': "Linkedin", class: 'share-story__social-link'}
+              = link_to '#linkedin', target: '_blank' do
+                %i.icon-linkedin
+            %li{'data-tooltip-position': 'top', 'data-tooltip': "Email", class: 'share-story__social-link'}
+              = link_to '#email', target: '_blank' do
+                %i.icon-email
+  = paginate @articles
+  .push
+    - if user_signed_in?
+      = link_to 'New Article', new_article_path, :class => "pull-right"
+.right-bar
+  = form_tag '#', method: 'get', class: 'searchform'  do
+    = text_field_tag :search, params[:search], class: 'searchform__field', placeholder: 'Search...'
+  .author-blog
+    = image_tag('bg_small.png')
+    = image_tag('designer.png', class: 'author-blog__photo')
+    .author-blog__content
+      %h3
+        Arnar Stefansson
+      %p
+        A graphic designer, a web developer, a boyfriend, a friend, a son ...
+  .categories
+    %h3.categories__title CATEGORIES
+    .categories__row
+      .categories__cell
+        Audio
+      .categories__cell
+        %span.categories__item-border 2
+    .categories__row
+      .categories__cell
+        Galerry
+      .categories__cell
+        %span.categories__item-border 2
+    .categories__row
+      .categories__cell
+        Image
+      .categories__cell
+        %span.categories__item-border 2
+    .categories__row
+      .categories__cell
+        Standart
+      .categories__cell
+        %span.categories__item-border 2
+      .categories__row
+      .categories__cell
+        Status
+      .categories__cell
+        %span.categories__item-border 2
+    .categories__row
+      .categories__cell
+        Uncategorized
+      .categories__cell
+        %span.categories__item-border 2
+    .categories__row
+      .categories__cell
+        Video
+      .categories__cell
+        %span.categories__item-border 2
+  .slider
+  .instagram-block
+  .categories
+  .textwidget
+  .flick-photos
+  .social
+  .bluth-tabs

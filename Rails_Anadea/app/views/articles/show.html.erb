@@ -6,16 +6,24 @@
   </header>
   
     <p class="lead"><%=@article.content%></p>
-  
+
+    <% if current_user.present? && current_user.id == @article.user_id %>
+        <div class="article-edit text-right">
+          <%= link_to 'Edit', edit_article_path(@article) %>  
+          <%= link_to 'Delete', article_path(@article), method:'delete' %>  
+        </div>
+      <%end%>
 </article>
 
   <div id="comments">
     <% @article.sub_articles.each do |sub|%>
       <article>
-        <span class="label label-default">User: <%= sub.user.name %> Date: <%= sub.created_at.strftime('%d-%m-%y %H:%M')%></span>
+        <span class="label label-default">User: <%= sub.user.name %></span>
+        <span class="label label-default pull-right">Date: <%= sub.created_at.strftime('%d-%m-%y %H:%M')%></span>
         <p><%= sub.content %></p>
-      </article>
+      </article>     
     <%end%>
+    
     <div class="inner-comments"></div>
   </div>
 
