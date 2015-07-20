@@ -1,0 +1,30 @@
+<%= form_for(@article) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label "Category" %><br>
+    <%= f.select :category_ids, Category.all.collect {|c| [c.name, c.id]}, {}, { multiple: true } %>
+  </div>
+
+  <%= f.fields_for :images, @article.images.build do |ff| %>
+    <%= ff.label :image, 'File'%>
+    <%= ff.file_field :image %>
+  <% end %>
+
+  <%= f.fields_for :images, @article.images.build do |ff| %>
+    <%= ff.label :image, 'File'%>
+    <%= ff.file_field :image %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

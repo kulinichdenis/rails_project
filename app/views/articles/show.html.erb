@@ -1,0 +1,49 @@
+<article class="film_review">
+  <header>
+    <h1><%= @article.title %></h1>
+    <span class="label label-info">Author: <%= @article.user.name %></span>
+    <span class="label label-info pull-right">Date: <%= @article.created_at.strftime('%d-%m-%y %H:%M')%></span>
+  </header>
+
+    <p class="lead"><%=@article.content%></p>
+
+    <% if current_user.present? && current_user.id == @article.user_id %>
+        <div class="article-edit text-right">
+          <%= link_to 'Edit', edit_article_path(@article) %>
+          <%= link_to 'Delete', article_path(@article), method:'delete' %>
+        </div>
+      <%end%>
+</article>
+
+  <div id="comments">
+    <% @article.sub_articles.each do |sub|%>
+      <article>
+        <span class="label label-default">User: <%= sub.user.name %></span>
+        <span class="label label-default pull-right">Date: <%= sub.created_at.strftime('%d-%m-%y %H:%M')%></span>
+        <p><%= sub.content %></p>
+      </article>
+    <%end%>
+
+    <div class="inner-comments"></div>
+  </div>
+
+  <% @article.images.each do |img|  %>
+    <%= image_tag(img.image)%>
+  <%end%>
+
+<% if user_signed_in? %>
+
+  <%= form_for [@article, SubArticle.new], remote: true do |f| %>
+    <%= f.label(:content, "Comments:") %></br>
+    <%= f.text_area :content, :cols => "80%", :rows => "5" %></br>
+    <%= f.submit("Add comment") %>
+  <% end %>
+<%end%>
+
+<div class="push">
+  <%= link_to 'Back', articles_path %>
+</div>
+
+
+
+
